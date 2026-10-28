@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>FNAF 1 Office Recreation - Gallinero</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script type="importmap">
+      { "imports": { "three": "./vendor/three/three.module.js" } }
+    </script>
+  </head>
+  <body>
+    <div id="scene-cursor" class="scene-cursor" aria-hidden="true">
+      <svg viewBox="0 0 20 24" width="20" height="24">
+        <path d="M2 2v17l4.5-4.2 3.2 7 3.2-1.5-3.4-6.8H16L2 2z" fill="white" stroke="black" stroke-width="1.5" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div id="pause-screen" class="pause-screen" role="dialog" aria-modal="true" aria-labelledby="pause-title">
+      <h1 id="pause-title">PAUSED</h1>
+      <div class="pause-control">
+        <label for="ambience-volume">
+          <span>Volume</span>
+          <output id="volume-value" for="ambience-volume">50%</output>
+        </label>
+        <input id="ambience-volume" type="range" min="0" max="100" step="1" value="50">
+      </div>
+      <div class="pause-control">
+        <label for="mouse-sensitivity">
+          <span>Mouse sensitivity</span>
+          <output id="sensitivity-value" for="mouse-sensitivity">80%</output>
+        </label>
+        <input id="mouse-sensitivity" type="range" min="20" max="100" step="1" value="80">
+      </div>
+      <div class="pause-control pause-toggle">
+        <label for="ghost-mode">
+          <span>Ghost Mode</span>
+          <input id="ghost-mode" type="checkbox">
+        </label>
+      </div>
+      <button id="play-button" type="button">Play</button>
+    </div>
+    <div id="ghost-hud" class="ghost-hud">GHOST MODE · WASD move · Space up · Shift down · Scroll speed</div>
+    <img id="instruction-image" src="textures/instruction.png" alt="instructions">
+    <script type="module" src="scripts/main.js"></script>
+  </body>
+</html>
